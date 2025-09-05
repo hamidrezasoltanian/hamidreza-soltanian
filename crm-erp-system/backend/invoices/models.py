@@ -1,7 +1,8 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 from django.utils import timezone
-from customers.models import Customer, Personnel
+from customers.models import Customer
+from personnel.models import Personnel
 from products.models import Product
 
 

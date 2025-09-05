@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'invoices',
     'crm',
     'reports',
+    'accounting',
+    'tax_system',
 ]
 
 MIDDLEWARE = [
