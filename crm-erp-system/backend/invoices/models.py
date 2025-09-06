@@ -268,3 +268,319 @@ class InvoiceItem(models.Model):
         self.total_amount = before_tax + self.tax_amount
         
         super().save(*args, **kwargs)
+
+
+class Quotation(models.Model):
+    """پیش‌فاکتور"""
+    
+    STATUS_CHOICES = [
+        ('draft', 'پیش‌نویس'),
+        ('sent', 'ارسال شده'),
+        ('accepted', 'پذیرفته شده'),
+        ('rejected', 'رد شده'),
+        ('expired', 'منقضی شده'),
+        ('converted', 'تبدیل شده'),
+    ]
+    
+    # اطلاعات اصلی
+    quotation_number = models.CharField(
+        max_length=50, 
+        unique=True, 
+        verbose_name='شماره پیش‌فاکتور'
+    )
+    status = models.CharField(
+        max_length=20, 
+        choices=STATUS_CHOICES, 
+        default='draft',
+        verbose_name='وضعیت'
+    )
+    
+    # مشتری
+    customer = models.ForeignKey(
+        Customer, 
+        on_delete=models.CASCADE, 
+        related_name='quotations',
+        verbose_name='مشتری'
+    )
+    contact_person = models.ForeignKey(
+        Personnel, 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True,
+        verbose_name='شخص تماس'
+    )
+    
+    # تاریخ‌ها
+    quotation_date = models.DateField(default=timezone.now, verbose_name='تاریخ پیش‌فاکتور')
+    valid_until = models.DateField(verbose_name='معتبر تا')
+    
+    # مبالغ
+    subtotal = models.DecimalField(
+        max_digits=15, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='جمع کل'
+    )
+    discount_amount = models.DecimalField(
+        max_digits=15, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='مبلغ تخفیف'
+    )
+    discount_percentage = models.DecimalField(
+        max_digits=5, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='درصد تخفیف'
+    )
+    tax_amount = models.DecimalField(
+        max_digits=15, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='مبلغ مالیات'
+    )
+    tax_percentage = models.DecimalField(
+        max_digits=5, 
+        decimal_places=2, 
+        default=9,
+        validators=[MinValueValidator(0)],
+        verbose_name='درصد مالیات'
+    )
+    total_amount = models.DecimalField(
+        max_digits=15, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='مبلغ کل'
+    )
+    
+    # اطلاعات اضافی
+    notes = models.TextField(blank=True, null=True, verbose_name='یادداشت‌ها')
+    terms_conditions = models.TextField(blank=True, null=True, verbose_name='شرایط و ضوابط')
+    
+    # اطلاعات سیستم
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='تاریخ بروزرسانی')
+    created_by = models.ForeignKey(
+        'auth.User', 
+        on_delete=models.SET_NULL, 
+        null=True,
+        verbose_name='ایجاد شده توسط'
+    )
+    converted_to_invoice = models.ForeignKey(
+        Invoice, 
+        on_delete=models.SET_NULL, 
+        null=True,
+        blank=True,
+        related_name='converted_from_quotation',
+        verbose_name='تبدیل شده به فاکتور'
+    )
+    
+    class Meta:
+        verbose_name = 'پیش‌فاکتور'
+        verbose_name_plural = 'پیش‌فاکتورها'
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['quotation_number']),
+            models.Index(fields=['customer']),
+            models.Index(fields=['status']),
+            models.Index(fields=['quotation_date']),
+        ]
+    
+    def __str__(self):
+        return f"پیش‌فاکتور {self.quotation_number} - {self.customer.full_name}"
+    
+    @property
+    def is_expired(self):
+        """بررسی انقضای پیش‌فاکتور"""
+        return timezone.now().date() > self.valid_until
+    
+    def save(self, *args, **kwargs):
+        """محاسبه مبالغ"""
+        # محاسبه تخفیف
+        if self.discount_percentage > 0:
+            self.discount_amount = (self.subtotal * self.discount_percentage) / 100
+        
+        # محاسبه مالیات
+        taxable_amount = self.subtotal - self.discount_amount
+        self.tax_amount = (taxable_amount * self.tax_percentage) / 100
+        
+        # محاسبه مبلغ کل
+        self.total_amount = taxable_amount + self.tax_amount
+        
+        super().save(*args, **kwargs)
+
+
+class QuotationItem(models.Model):
+    """آیتم‌های پیش‌فاکتور"""
+    
+    quotation = models.ForeignKey(
+        Quotation, 
+        on_delete=models.CASCADE, 
+        related_name='items',
+        verbose_name='پیش‌فاکتور'
+    )
+    product = models.ForeignKey(
+        Product, 
+        on_delete=models.CASCADE, 
+        verbose_name='محصول'
+    )
+    quantity = models.DecimalField(
+        max_digits=10, 
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='مقدار'
+    )
+    unit_price = models.DecimalField(
+        max_digits=12, 
+        decimal_places=2,
+        validators=[MinValueValidator(0)],
+        verbose_name='قیمت واحد'
+    )
+    discount_amount = models.DecimalField(
+        max_digits=12, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='مبلغ تخفیف'
+    )
+    discount_percentage = models.DecimalField(
+        max_digits=5, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='درصد تخفیف'
+    )
+    tax_amount = models.DecimalField(
+        max_digits=12, 
+        decimal_places=2, 
+        default=0,
+        validators=[MinValueValidator(0)],
+        verbose_name='مبلغ مالیات'
+    )
+    total_amount = models.DecimalField(
+        max_digits=12, 
+        decimal_places=2,
+        validators=[MinValueValidator(0)],
+        verbose_name='مبلغ کل'
+    )
+    description = models.TextField(blank=True, null=True, verbose_name='توضیحات')
+    sort_order = models.PositiveIntegerField(default=0, verbose_name='ترتیب')
+    
+    class Meta:
+        verbose_name = 'آیتم پیش‌فاکتور'
+        verbose_name_plural = 'آیتم‌های پیش‌فاکتور'
+        ordering = ['quotation', 'sort_order']
+    
+    def __str__(self):
+        return f"{self.quotation.quotation_number} - {self.product.name}"
+    
+    def save(self, *args, **kwargs):
+        """محاسبه مبالغ"""
+        # محاسبه تخفیف
+        if self.discount_percentage > 0:
+            self.discount_amount = (self.quantity * self.unit_price * self.discount_percentage) / 100
+        
+        # محاسبه مبلغ قبل از مالیات
+        before_tax = (self.quantity * self.unit_price) - self.discount_amount
+        
+        # محاسبه مالیات
+        self.tax_amount = (before_tax * self.quotation.tax_percentage) / 100
+        
+        # محاسبه مبلغ کل
+        self.total_amount = before_tax + self.tax_amount
+        
+        super().save(*args, **kwargs)
+
+
+class Payment(models.Model):
+    """پرداخت‌ها"""
+    
+    PAYMENT_METHODS = [
+        ('cash', 'نقدی'),
+        ('bank_transfer', 'انتقال بانکی'),
+        ('check', 'چک'),
+        ('credit_card', 'کارت اعتباری'),
+        ('installment', 'قسطی'),
+    ]
+    
+    STATUS_CHOICES = [
+        ('pending', 'در انتظار'),
+        ('completed', 'تکمیل شده'),
+        ('failed', 'ناموفق'),
+        ('cancelled', 'لغو شده'),
+    ]
+    
+    # اطلاعات اصلی
+    invoice = models.ForeignKey(
+        Invoice, 
+        on_delete=models.CASCADE, 
+        related_name='payments',
+        verbose_name='فاکتور'
+    )
+    amount = models.DecimalField(
+        max_digits=15, 
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='مبلغ'
+    )
+    payment_method = models.CharField(
+        max_length=20, 
+        choices=PAYMENT_METHODS,
+        verbose_name='روش پرداخت'
+    )
+    payment_date = models.DateField(default=timezone.now, verbose_name='تاریخ پرداخت')
+    status = models.CharField(
+        max_length=20, 
+        choices=STATUS_CHOICES, 
+        default='completed',
+        verbose_name='وضعیت'
+    )
+    
+    # اطلاعات اضافی
+    reference_number = models.CharField(
+        max_length=100, 
+        blank=True, 
+        null=True,
+        verbose_name='شماره مرجع'
+    )
+    bank_name = models.CharField(
+        max_length=100, 
+        blank=True, 
+        null=True,
+        verbose_name='نام بانک'
+    )
+    check_number = models.CharField(
+        max_length=50, 
+        blank=True, 
+        null=True,
+        verbose_name='شماره چک'
+    )
+    check_date = models.DateField(blank=True, null=True, verbose_name='تاریخ چک')
+    notes = models.TextField(blank=True, null=True, verbose_name='یادداشت‌ها')
+    
+    # اطلاعات سیستم
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
+    created_by = models.ForeignKey(
+        'auth.User', 
+        on_delete=models.SET_NULL, 
+        null=True,
+        verbose_name='ایجاد شده توسط'
+    )
+    
+    class Meta:
+        verbose_name = 'پرداخت'
+        verbose_name_plural = 'پرداخت‌ها'
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['invoice']),
+            models.Index(fields=['payment_date']),
+            models.Index(fields=['status']),
+        ]
+    
+    def __str__(self):
+        return f"پرداخت {self.amount} - {self.invoice.invoice_number}"
