@@ -12,9 +12,9 @@ urlpatterns = [
     path('api/v1/inventory/', include('inventory.urls')),
     path('api/v1/invoices/', include('invoices.urls')),
     path('api/v1/crm/', include('crm.urls')),
-    # path('api/v1/accounting/', include('accounting.urls')),
-    # path('api/v1/tax/', include('tax_system.urls')),
-    # path('api/v1/reports/', include('reports.urls')),
+    path('api/v1/accounting/', include('accounting.urls')),
+    path('api/v1/tax/', include('tax_system.urls')),
+    path('api/v1/reports/', include('reports.urls')),
 ]
 
 if settings.DEBUG:
