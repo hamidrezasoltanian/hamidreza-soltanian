@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Box } from '@mui/material';
+import { CustomThemeProvider } from './contexts/ThemeContext';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -21,29 +22,35 @@ function App() {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    return <Login />;
+    return (
+      <CustomThemeProvider>
+        <Login />
+      </CustomThemeProvider>
+    );
   }
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/invoices" element={<Invoices />} />
-          <Route path="/crm" element={<CRM />} />
-          <Route path="/personnel" element={<Personnel />} />
-          <Route path="/accounting" element={<Accounting />} />
-          <Route path="/tax" element={<TaxSystem />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/print" element={<PrintSystem />} />
-          <Route path="/status" element={<SystemStatus />} />
-        </Routes>
-      </Layout>
-    </Box>
+    <CustomThemeProvider>
+      <Box sx={{ display: 'flex' }}>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/invoices" element={<Invoices />} />
+            <Route path="/crm" element={<CRM />} />
+            <Route path="/personnel" element={<Personnel />} />
+            <Route path="/accounting" element={<Accounting />} />
+            <Route path="/tax" element={<TaxSystem />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/print" element={<PrintSystem />} />
+            <Route path="/status" element={<SystemStatus />} />
+          </Routes>
+        </Layout>
+      </Box>
+    </CustomThemeProvider>
   );
 }
 

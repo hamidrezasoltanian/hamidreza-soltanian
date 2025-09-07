@@ -12,6 +12,19 @@ import {
   Button,
   IconButton,
   Tooltip,
+  Fab,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  Switch,
+  FormControlLabel,
+  Slider,
+  Divider,
 } from '@mui/material';
 import {
   People,
@@ -24,250 +37,289 @@ import {
   Warning,
   CheckCircle,
   Schedule,
+  Add,
+  Settings,
+  ViewModule,
+  ViewList,
+  Palette,
+  FilterList,
 } from '@mui/icons-material';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
 import { useCustomers } from '../hooks/useCustomers';
 import { useProducts } from '../hooks/useProducts';
 import { useInvoices } from '../hooks/useInvoices';
 import { useInventory } from '../hooks/useInventory';
+import { useDashboard, FilterOptions } from '../hooks/useDashboard';
+import DashboardWidget from '../components/DashboardWidgets';
+import DashboardFilters from '../components/DashboardFilters';
 
 const Dashboard: React.FC = () => {
   const [refreshKey, setRefreshKey] = useState(0);
+  const [showFilters, setShowFilters] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [showAddWidget, setShowAddWidget] = useState(false);
+  
   const { data: customers, isLoading: customersLoading } = useCustomers();
   const { data: products, isLoading: productsLoading } = useProducts();
   const { data: invoices, isLoading: invoicesLoading } = useInvoices();
   const { data: warehouses, isLoading: warehousesLoading } = useInventory();
+  
+  const {
+    config,
+    visibleWidgets,
+    isConfiguring,
+    toggleWidgetVisibility,
+    updateConfig,
+    resetDashboard,
+    addWidget,
+  } = useDashboard();
+
+  const [filters, setFilters] = useState<FilterOptions>({
+    dateRange: { start: null, end: null },
+    period: 'monthly',
+    category: [],
+    status: [],
+    amountRange: [0, 10000000],
+    trend: 'all',
+    showZeroValues: true,
+    groupBy: 'none',
+  });
 
   const handleRefresh = () => {
     setRefreshKey(prev => prev + 1);
   };
 
-  // Sample data for charts
-  const salesData = [
-    { name: 'فروردین', amount: 4000, orders: 24 },
-    { name: 'اردیبهشت', amount: 3000, orders: 13 },
-    { name: 'خرداد', amount: 2000, orders: 98 },
-    { name: 'تیر', amount: 2780, orders: 39 },
-    { name: 'مرداد', amount: 1890, orders: 48 },
-    { name: 'شهریور', amount: 2390, orders: 38 },
-  ];
+  const handleFiltersChange = (newFilters: FilterOptions) => {
+    setFilters(newFilters);
+  };
 
-  const categoryData = [
-    { name: 'الکترونیک', value: 400, color: '#0088FE' },
-    { name: 'پوشاک', value: 300, color: '#00C49F' },
-    { name: 'کتاب', value: 300, color: '#FFBB28' },
-    { name: 'ورزشی', value: 200, color: '#FF8042' },
-  ];
+  const handleApplyFilters = () => {
+    // Apply filters logic here
+    console.log('Applying filters:', filters);
+  };
 
-  const recentActivities = [
-    { id: 1, action: 'فاکتور جدید ایجاد شد', time: '2 دقیقه پیش', type: 'success' },
-    { id: 2, action: 'مشتری جدید اضافه شد', time: '15 دقیقه پیش', type: 'info' },
-    { id: 3, action: 'محصول جدید ثبت شد', time: '1 ساعت پیش', type: 'info' },
-    { id: 4, action: 'موجودی انبار به‌روزرسانی شد', time: '2 ساعت پیش', type: 'warning' },
-    { id: 5, action: 'پرداخت تایید شد', time: '3 ساعت پیش', type: 'success' },
-  ];
+  const handleResetFilters = () => {
+    setFilters({
+      dateRange: { start: null, end: null },
+      period: 'monthly',
+      category: [],
+      status: [],
+      amountRange: [0, 10000000],
+      trend: 'all',
+      showZeroValues: true,
+      groupBy: 'none',
+    });
+  };
 
-  const stats = [
-    {
-      title: 'مشتریان',
-      value: customers?.length || 0,
-      icon: <People sx={{ fontSize: 40 }} />,
-      color: '#1976d2',
-      trend: '+12%',
-      trendUp: true,
-      loading: customersLoading,
-    },
-    {
-      title: 'محصولات',
-      value: products?.length || 0,
-      icon: <Inventory sx={{ fontSize: 40 }} />,
-      color: '#388e3c',
-      trend: '+8%',
-      trendUp: true,
-      loading: productsLoading,
-    },
-    {
-      title: 'فاکتورها',
-      value: invoices?.length || 0,
-      icon: <ShoppingCart sx={{ fontSize: 40 }} />,
-      color: '#f57c00',
-      trend: '+23%',
-      trendUp: true,
-      loading: invoicesLoading,
-    },
-    {
-      title: 'انبارها',
-      value: warehouses?.length || 0,
-      icon: <Assessment sx={{ fontSize: 40 }} />,
-      color: '#d32f2f',
-      trend: '+5%',
-      trendUp: true,
-      loading: warehousesLoading,
-    },
-  ];
+  const handleConfigureWidget = (widgetId: string) => {
+    console.log('Configuring widget:', widgetId);
+  };
 
-  const getActivityIcon = (type: string) => {
-    switch (type) {
-      case 'success': return <CheckCircle color="success" />;
-      case 'warning': return <Warning color="warning" />;
-      case 'info': return <Schedule color="info" />;
-      default: return <CheckCircle />;
+  const handleAddWidget = (type: 'chart' | 'stat' | 'table' | 'list') => {
+    const newWidget = {
+      title: `ویجت جدید ${type}`,
+      type,
+      size: 'medium' as const,
+      visible: true,
+    };
+    addWidget(newWidget);
+    setShowAddWidget(false);
+  };
+
+  // Update widget data with real data
+  const updateWidgetData = () => {
+    const updatedWidgets = config.widgets.map(widget => {
+      switch (widget.id) {
+        case 'customers-stat':
+          return { ...widget, data: { value: customers?.length || 0, trend: 12 } };
+        case 'products-stat':
+          return { ...widget, data: { value: products?.length || 0, trend: 8 } };
+        case 'invoices-stat':
+          return { ...widget, data: { value: invoices?.length || 0, trend: 23 } };
+        case 'sales-stat':
+          return { ...widget, data: { value: 12345000, trend: 15 } };
+        default:
+          return widget;
+      }
+    });
+    updateConfig({ widgets: updatedWidgets });
+  };
+
+  useEffect(() => {
+    updateWidgetData();
+  }, [customers, products, invoices, warehouses]);
+
+  const getGridSize = (size: 'small' | 'medium' | 'large') => {
+    switch (size) {
+      case 'small': return 3;
+      case 'medium': return 6;
+      case 'large': return 12;
+      default: return 6;
     }
   };
 
   return (
     <Box>
+      {/* Header */}
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
         <Typography variant="h4" component="h1">
-          داشبورد
+          داشبورد پیشرفته
         </Typography>
-        <Tooltip title="به‌روزرسانی">
-          <IconButton onClick={handleRefresh} color="primary">
-            <Refresh />
-          </IconButton>
-        </Tooltip>
+        <Box display="flex" gap={1}>
+          <Tooltip title="فیلترها">
+            <IconButton 
+              onClick={() => setShowFilters(!showFilters)} 
+              color={showFilters ? 'primary' : 'default'}
+            >
+              <FilterList />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="تنظیمات">
+            <IconButton onClick={() => setShowSettings(true)}>
+              <Settings />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="به‌روزرسانی">
+            <IconButton onClick={handleRefresh} color="primary">
+              <Refresh />
+            </IconButton>
+          </Tooltip>
+        </Box>
       </Box>
-      
+
+      {/* Filters */}
+      {showFilters && (
+        <DashboardFilters
+          filters={filters}
+          onFiltersChange={handleFiltersChange}
+          onApplyFilters={handleApplyFilters}
+          onResetFilters={handleResetFilters}
+          onRefresh={handleRefresh}
+        />
+      )}
+
+      {/* Widgets Grid */}
       <Grid container spacing={3}>
-        {stats.map((stat, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Card sx={{ position: 'relative', overflow: 'visible' }}>
-              <CardContent>
-                <Box display="flex" alignItems="center" justifyContent="space-between">
-                  <Box>
-                    <Typography color="textSecondary" gutterBottom>
-                      {stat.title}
-                    </Typography>
-                    <Typography variant="h4" component="div">
-                      {stat.loading ? (
-                        <LinearProgress sx={{ width: 100 }} />
-                      ) : (
-                        stat.value.toLocaleString('fa-IR')
-                      )}
-                    </Typography>
-                    <Box display="flex" alignItems="center" mt={1}>
-                      {stat.trendUp ? (
-                        <TrendingUp color="success" sx={{ fontSize: 16, mr: 0.5 }} />
-                      ) : (
-                        <TrendingDown color="error" sx={{ fontSize: 16, mr: 0.5 }} />
-                      )}
-                      <Typography variant="body2" color={stat.trendUp ? 'success.main' : 'error.main'}>
-                        {stat.trend}
-                      </Typography>
-                    </Box>
-                  </Box>
-                  <Box sx={{ color: stat.color }}>
-                    {stat.icon}
-                  </Box>
-                </Box>
-              </CardContent>
-            </Card>
+        {visibleWidgets.map((widget) => (
+          <Grid 
+            item 
+            xs={12} 
+            sm={getGridSize(widget.size) * 2} 
+            md={getGridSize(widget.size)} 
+            key={widget.id}
+          >
+            <DashboardWidget
+              {...widget}
+              onToggleVisibility={toggleWidgetVisibility}
+              onConfigure={handleConfigureWidget}
+            />
           </Grid>
         ))}
-        
-        <Grid item xs={12} md={8}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              نمودار فروش ماهانه
-            </Typography>
-            <Box height={300}>
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={salesData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <RechartsTooltip />
-                  <Line type="monotone" dataKey="amount" stroke="#8884d8" strokeWidth={2} />
-                  <Line type="monotone" dataKey="orders" stroke="#82ca9d" strokeWidth={2} />
-                </LineChart>
-              </ResponsiveContainer>
-            </Box>
-          </Paper>
-        </Grid>
-        
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              فعالیت‌های اخیر
-            </Typography>
-            <Box>
-              {recentActivities.map((activity) => (
-                <Box key={activity.id} display="flex" alignItems="center" mb={2}>
-                  <Box mr={1}>
-                    {getActivityIcon(activity.type)}
-                  </Box>
-                  <Box flex={1}>
-                    <Typography variant="body2">
-                      {activity.action}
-                    </Typography>
-                    <Typography variant="caption" color="textSecondary">
-                      {activity.time}
-                    </Typography>
-                  </Box>
-                </Box>
-              ))}
-            </Box>
-          </Paper>
-        </Grid>
-
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              فروش بر اساس دسته‌بندی
-            </Typography>
-            <Box height={250}>
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={categoryData}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
-                  >
-                    {categoryData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <RechartsTooltip />
-                </PieChart>
-              </ResponsiveContainer>
-            </Box>
-          </Paper>
-        </Grid>
-
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              وضعیت سیستم
-            </Typography>
-            <Box>
-              <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                <Typography variant="body2">سرور</Typography>
-                <Chip label="آنلاین" color="success" size="small" />
-              </Box>
-              <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                <Typography variant="body2">دیتابیس</Typography>
-                <Chip label="متصل" color="success" size="small" />
-              </Box>
-              <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                <Typography variant="body2">API</Typography>
-                <Chip label="فعال" color="success" size="small" />
-              </Box>
-              <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                <Typography variant="body2">فضای ذخیره</Typography>
-                <Chip label="75%" color="warning" size="small" />
-              </Box>
-            </Box>
-            <Alert severity="info" sx={{ mt: 2 }}>
-              همه سرویس‌ها به درستی کار می‌کنند
-            </Alert>
-          </Paper>
-        </Grid>
       </Grid>
+
+      {/* Add Widget FAB */}
+      <Fab
+        color="primary"
+        aria-label="add widget"
+        sx={{ position: 'fixed', bottom: 16, right: 16 }}
+        onClick={() => setShowAddWidget(true)}
+      >
+        <Add />
+      </Fab>
+
+      {/* Add Widget Dialog */}
+      <Dialog open={showAddWidget} onClose={() => setShowAddWidget(false)}>
+        <DialogTitle>افزودن ویجت جدید</DialogTitle>
+        <DialogContent>
+          <List>
+            <ListItem button onClick={() => handleAddWidget('stat')}>
+              <ListItemIcon><Assessment /></ListItemIcon>
+              <ListItemText primary="آمار" secondary="نمایش آمار عددی" />
+            </ListItem>
+            <ListItem button onClick={() => handleAddWidget('chart')}>
+              <ListItemIcon><TrendingUp /></ListItemIcon>
+              <ListItemText primary="نمودار" secondary="نمایش نمودار خطی" />
+            </ListItem>
+            <ListItem button onClick={() => handleAddWidget('table')}>
+              <ListItemIcon><ViewList /></ListItemIcon>
+              <ListItemText primary="جدول" secondary="نمایش داده در جدول" />
+            </ListItem>
+            <ListItem button onClick={() => handleAddWidget('list')}>
+              <ListItemIcon><Schedule /></ListItemIcon>
+              <ListItemText primary="لیست" secondary="نمایش لیست فعالیت‌ها" />
+            </ListItem>
+          </List>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setShowAddWidget(false)}>انصراف</Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Settings Dialog */}
+      <Dialog open={showSettings} onClose={() => setShowSettings(false)} maxWidth="md" fullWidth>
+        <DialogTitle>تنظیمات داشبورد</DialogTitle>
+        <DialogContent>
+          <Box mb={3}>
+            <Typography variant="h6" gutterBottom>چیدمان</Typography>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={config.layout === 'grid'}
+                  onChange={(e) => updateConfig({ layout: e.target.checked ? 'grid' : 'list' })}
+                />
+              }
+              label="چیدمان شبکه‌ای"
+            />
+          </Box>
+          
+          <Box mb={3}>
+            <Typography variant="h6" gutterBottom>تم</Typography>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={config.theme === 'dark'}
+                  onChange={(e) => updateConfig({ theme: e.target.checked ? 'dark' : 'light' })}
+                />
+              }
+              label="حالت تاریک"
+            />
+          </Box>
+
+          <Box mb={3}>
+            <Typography variant="h6" gutterBottom>فاصله به‌روزرسانی (ثانیه)</Typography>
+            <Slider
+              value={config.refreshInterval / 1000}
+              onChange={(_, value) => updateConfig({ refreshInterval: (value as number) * 1000 })}
+              min={10}
+              max={300}
+              step={10}
+              marks={[
+                { value: 10, label: '10s' },
+                { value: 60, label: '1m' },
+                { value: 300, label: '5m' },
+              ]}
+              valueLabelDisplay="auto"
+            />
+          </Box>
+
+          <Divider sx={{ my: 2 }} />
+          
+          <Box>
+            <Typography variant="h6" gutterBottom>بازنشانی</Typography>
+            <Button 
+              variant="outlined" 
+              color="warning" 
+              onClick={resetDashboard}
+              fullWidth
+            >
+              بازنشانی داشبورد به حالت پیش‌فرض
+            </Button>
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setShowSettings(false)}>بستن</Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

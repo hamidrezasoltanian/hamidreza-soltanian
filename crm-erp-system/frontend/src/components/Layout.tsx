@@ -34,9 +34,12 @@ import {
   BarChart,
   Print,
   MonitorHeart,
+  DarkMode,
+  LightMode,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../contexts/ThemeContext';
 
 const drawerWidth = 240;
 
@@ -65,6 +68,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, logout } = useAuth();
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -130,6 +134,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             سیستم مدیریت مشتریان و منابع سازمانی
           </Typography>
+          <Tooltip title={isDarkMode ? 'حالت روشن' : 'حالت تاریک'}>
+            <IconButton onClick={toggleDarkMode} color="inherit" sx={{ mr: 1 }}>
+              {isDarkMode ? <LightMode /> : <DarkMode />}
+            </IconButton>
+          </Tooltip>
           <IconButton
             size="large"
             aria-label="account of current user"

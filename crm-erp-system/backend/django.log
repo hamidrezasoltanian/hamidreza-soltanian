@@ -14,3 +14,4 @@ Unauthorized: /api/v1/customers/
 Not Found: /api/v1/
 [08/Sep/2025 02:14:54] "GET /api/v1/ HTTP/1.1" 404 4116
 [08/Sep/2025 02:15:03] "GET /admin/ HTTP/1.1" 302 0
+[08/Sep/2025 02:34:26] "GET /admin/ HTTP/1.1" 302 0
