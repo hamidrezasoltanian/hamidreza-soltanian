@@ -27,6 +27,13 @@ import {
   AccountCircle,
   Logout,
   ChevronLeft,
+  Business,
+  Receipt,
+  AccountBalance,
+  Gavel,
+  BarChart,
+  Print,
+  MonitorHeart,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
@@ -40,6 +47,12 @@ const menuItems = [
   { text: 'انبار', icon: <Inventory />, path: '/inventory' },
   { text: 'فاکتورها', icon: <ShoppingCart />, path: '/invoices' },
   { text: 'CRM', icon: <Assessment />, path: '/crm' },
+  { text: 'پرسنل', icon: <Business />, path: '/personnel' },
+  { text: 'حسابداری', icon: <AccountBalance />, path: '/accounting' },
+  { text: 'مالیات', icon: <Gavel />, path: '/tax' },
+  { text: 'گزارش‌گیری', icon: <BarChart />, path: '/reports' },
+  { text: 'پرینت', icon: <Print />, path: '/print' },
+  { text: 'وضعیت سیستم', icon: <MonitorHeart />, path: '/status' },
 ];
 
 interface LayoutProps {

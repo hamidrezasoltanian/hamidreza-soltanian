@@ -9,6 +9,12 @@ import Products from './pages/Products';
 import Inventory from './pages/Inventory';
 import Invoices from './pages/Invoices';
 import CRM from './pages/CRM';
+import Personnel from './pages/Personnel';
+import Accounting from './pages/Accounting';
+import TaxSystem from './pages/TaxSystem';
+import Reports from './pages/Reports';
+import PrintSystem from './pages/PrintSystem';
+import SystemStatus from './pages/SystemStatus';
 import { useAuth } from './hooks/useAuth';
 
 function App() {
@@ -29,6 +35,12 @@ function App() {
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/invoices" element={<Invoices />} />
           <Route path="/crm" element={<CRM />} />
+          <Route path="/personnel" element={<Personnel />} />
+          <Route path="/accounting" element={<Accounting />} />
+          <Route path="/tax" element={<TaxSystem />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/print" element={<PrintSystem />} />
+          <Route path="/status" element={<SystemStatus />} />
         </Routes>
       </Layout>
     </Box>

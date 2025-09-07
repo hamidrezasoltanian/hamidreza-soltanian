@@ -1,0 +1,2121 @@
+
+> crm-erp-frontend@1.0.0 start
+> react-scripts start
+
+(node:106081) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:106081) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 4 errors and 1 warning
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Dashboard.tsx
+  Line 1:27:    'useEffect' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 12:3:    'Button' is defined but never used               @typescript-eslint/no-unused-vars
+  Line 28:105:  'BarChart' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 28:115:  'Bar' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:10:   'refreshKey' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./src/pages/Dashboard.tsx 10:0-51
+Module not found: Error: Can't resolve '../hooks/useProducts' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 11:0-51
+Module not found: Error: Can't resolve '../hooks/useInvoices' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 12:0-53
+Module not found: Error: Can't resolve '../hooks/useInventory' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 7 errors and 1 warning
+Compiling...
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+ERROR in src/pages/Dashboard.tsx:30:29
+TS2307: Cannot find module '../hooks/useProducts' or its corresponding type declarations.
+    28 | import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+    29 | import { useCustomers } from '../hooks/useCustomers';
+  > 30 | import { useProducts } from '../hooks/useProducts';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    31 | import { useInvoices } from '../hooks/useInvoices';
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+
+ERROR in src/pages/Dashboard.tsx:31:29
+TS2307: Cannot find module '../hooks/useInvoices' or its corresponding type declarations.
+    29 | import { useCustomers } from '../hooks/useCustomers';
+    30 | import { useProducts } from '../hooks/useProducts';
+  > 31 | import { useInvoices } from '../hooks/useInvoices';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+    34 | const Dashboard: React.FC = () => {
+
+ERROR in src/pages/Dashboard.tsx:32:30
+TS2307: Cannot find module '../hooks/useInventory' or its corresponding type declarations.
+    30 | import { useProducts } from '../hooks/useProducts';
+    31 | import { useInvoices } from '../hooks/useInvoices';
+  > 32 | import { useInventory } from '../hooks/useInventory';
+       |                              ^^^^^^^^^^^^^^^^^^^^^^^
+    33 |
+    34 | const Dashboard: React.FC = () => {
+    35 |   const [refreshKey, setRefreshKey] = useState(0);
+
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Dashboard.tsx
+  Line 1:27:    'useEffect' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 12:3:    'Button' is defined but never used               @typescript-eslint/no-unused-vars
+  Line 28:105:  'BarChart' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 28:115:  'Bar' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:10:   'refreshKey' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./src/pages/Dashboard.tsx 10:0-51
+Module not found: Error: Can't resolve '../hooks/useProducts' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 11:0-51
+Module not found: Error: Can't resolve '../hooks/useInvoices' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 12:0-53
+Module not found: Error: Can't resolve '../hooks/useInventory' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 7 errors and 1 warning
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+ERROR in src/pages/Dashboard.tsx:30:29
+TS2307: Cannot find module '../hooks/useProducts' or its corresponding type declarations.
+    28 | import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+    29 | import { useCustomers } from '../hooks/useCustomers';
+  > 30 | import { useProducts } from '../hooks/useProducts';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    31 | import { useInvoices } from '../hooks/useInvoices';
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+
+ERROR in src/pages/Dashboard.tsx:31:29
+TS2307: Cannot find module '../hooks/useInvoices' or its corresponding type declarations.
+    29 | import { useCustomers } from '../hooks/useCustomers';
+    30 | import { useProducts } from '../hooks/useProducts';
+  > 31 | import { useInvoices } from '../hooks/useInvoices';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+    34 | const Dashboard: React.FC = () => {
+
+ERROR in src/pages/Dashboard.tsx:32:30
+TS2307: Cannot find module '../hooks/useInventory' or its corresponding type declarations.
+    30 | import { useProducts } from '../hooks/useProducts';
+    31 | import { useInvoices } from '../hooks/useInvoices';
+  > 32 | import { useInventory } from '../hooks/useInventory';
+       |                              ^^^^^^^^^^^^^^^^^^^^^^^
+    33 |
+    34 | const Dashboard: React.FC = () => {
+    35 |   const [refreshKey, setRefreshKey] = useState(0);
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Dashboard.tsx
+  Line 1:27:    'useEffect' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 12:3:    'Button' is defined but never used               @typescript-eslint/no-unused-vars
+  Line 28:105:  'BarChart' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 28:115:  'Bar' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:10:   'refreshKey' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./src/pages/Dashboard.tsx 10:0-51
+Module not found: Error: Can't resolve '../hooks/useProducts' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 11:0-51
+Module not found: Error: Can't resolve '../hooks/useInvoices' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 12:0-53
+Module not found: Error: Can't resolve '../hooks/useInventory' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 7 errors and 1 warning
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+ERROR in src/pages/Dashboard.tsx:30:29
+TS2307: Cannot find module '../hooks/useProducts' or its corresponding type declarations.
+    28 | import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+    29 | import { useCustomers } from '../hooks/useCustomers';
+  > 30 | import { useProducts } from '../hooks/useProducts';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    31 | import { useInvoices } from '../hooks/useInvoices';
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+
+ERROR in src/pages/Dashboard.tsx:31:29
+TS2307: Cannot find module '../hooks/useInvoices' or its corresponding type declarations.
+    29 | import { useCustomers } from '../hooks/useCustomers';
+    30 | import { useProducts } from '../hooks/useProducts';
+  > 31 | import { useInvoices } from '../hooks/useInvoices';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+    34 | const Dashboard: React.FC = () => {
+
+ERROR in src/pages/Dashboard.tsx:32:30
+TS2307: Cannot find module '../hooks/useInventory' or its corresponding type declarations.
+    30 | import { useProducts } from '../hooks/useProducts';
+    31 | import { useInvoices } from '../hooks/useInvoices';
+  > 32 | import { useInventory } from '../hooks/useInventory';
+       |                              ^^^^^^^^^^^^^^^^^^^^^^^
+    33 |
+    34 | const Dashboard: React.FC = () => {
+    35 |   const [refreshKey, setRefreshKey] = useState(0);
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/App.tsx
+  Line 12:8:  'Personnel' is defined but never used     @typescript-eslint/no-unused-vars
+  Line 13:8:  'Accounting' is defined but never used    @typescript-eslint/no-unused-vars
+  Line 14:8:  'TaxSystem' is defined but never used     @typescript-eslint/no-unused-vars
+  Line 15:8:  'Reports' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 16:8:  'PrintSystem' is defined but never used   @typescript-eslint/no-unused-vars
+  Line 17:8:  'SystemStatus' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Dashboard.tsx
+  Line 1:27:    'useEffect' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 12:3:    'Button' is defined but never used               @typescript-eslint/no-unused-vars
+  Line 28:105:  'BarChart' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 28:115:  'Bar' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:10:   'refreshKey' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./src/pages/Dashboard.tsx 10:0-51
+Module not found: Error: Can't resolve '../hooks/useProducts' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 11:0-51
+Module not found: Error: Can't resolve '../hooks/useInvoices' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 12:0-53
+Module not found: Error: Can't resolve '../hooks/useInventory' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 7 errors and 1 warning
+ERROR in src/App.tsx:12:23
+TS2307: Cannot find module './pages/Personnel' or its corresponding type declarations.
+    10 | import Invoices from './pages/Invoices';
+    11 | import CRM from './pages/CRM';
+  > 12 | import Personnel from './pages/Personnel';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+
+ERROR in src/App.tsx:13:24
+TS2307: Cannot find module './pages/Accounting' or its corresponding type declarations.
+    11 | import CRM from './pages/CRM';
+    12 | import Personnel from './pages/Personnel';
+  > 13 | import Accounting from './pages/Accounting';
+       |                        ^^^^^^^^^^^^^^^^^^^^
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+
+ERROR in src/App.tsx:14:23
+TS2307: Cannot find module './pages/TaxSystem' or its corresponding type declarations.
+    12 | import Personnel from './pages/Personnel';
+    13 | import Accounting from './pages/Accounting';
+  > 14 | import TaxSystem from './pages/TaxSystem';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+
+ERROR in src/App.tsx:15:21
+TS2307: Cannot find module './pages/Reports' or its corresponding type declarations.
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+  > 15 | import Reports from './pages/Reports';
+       |                     ^^^^^^^^^^^^^^^^^
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+
+ERROR in src/App.tsx:16:25
+TS2307: Cannot find module './pages/PrintSystem' or its corresponding type declarations.
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+  > 16 | import PrintSystem from './pages/PrintSystem';
+       |                         ^^^^^^^^^^^^^^^^^^^^^
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+    19 |
+
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+ERROR in src/pages/Dashboard.tsx:30:29
+TS2307: Cannot find module '../hooks/useProducts' or its corresponding type declarations.
+    28 | import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+    29 | import { useCustomers } from '../hooks/useCustomers';
+  > 30 | import { useProducts } from '../hooks/useProducts';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    31 | import { useInvoices } from '../hooks/useInvoices';
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+
+ERROR in src/pages/Dashboard.tsx:31:29
+TS2307: Cannot find module '../hooks/useInvoices' or its corresponding type declarations.
+    29 | import { useCustomers } from '../hooks/useCustomers';
+    30 | import { useProducts } from '../hooks/useProducts';
+  > 31 | import { useInvoices } from '../hooks/useInvoices';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+    34 | const Dashboard: React.FC = () => {
+
+ERROR in src/pages/Dashboard.tsx:32:30
+TS2307: Cannot find module '../hooks/useInventory' or its corresponding type declarations.
+    30 | import { useProducts } from '../hooks/useProducts';
+    31 | import { useInvoices } from '../hooks/useInvoices';
+  > 32 | import { useInventory } from '../hooks/useInventory';
+       |                              ^^^^^^^^^^^^^^^^^^^^^^^
+    33 |
+    34 | const Dashboard: React.FC = () => {
+    35 |   const [refreshKey, setRefreshKey] = useState(0);
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Dashboard.tsx
+  Line 1:27:    'useEffect' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 12:3:    'Button' is defined but never used               @typescript-eslint/no-unused-vars
+  Line 28:105:  'BarChart' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 28:115:  'Bar' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:10:   'refreshKey' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/SystemStatus.tsx
+  Line 1:27:   'useEffect' is defined but never used                 @typescript-eslint/no-unused-vars
+  Line 11:3:   'Alert' is defined but never used                     @typescript-eslint/no-unused-vars
+  Line 12:3:   'Button' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 32:3:   'Storage' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 33:3:   'Api' is defined but never used                       @typescript-eslint/no-unused-vars
+  Line 34:3:   'Security' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:3:   'Speed' is defined but never used                     @typescript-eslint/no-unused-vars
+  Line 36:3:   'Memory' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 37:3:   'NetworkCheck' is defined but never used              @typescript-eslint/no-unused-vars
+  Line 41:10:  'refreshKey' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 49:24:  'setModuleStatus' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 60:22:  'setRecentLogs' is assigned a value but never used    @typescript-eslint/no-unused-vars
+
+ERROR in ./src/App.tsx 16:0-42
+Module not found: Error: Can't resolve './pages/Personnel' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 17:0-44
+Module not found: Error: Can't resolve './pages/Accounting' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 18:0-42
+Module not found: Error: Can't resolve './pages/TaxSystem' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 19:0-38
+Module not found: Error: Can't resolve './pages/Reports' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 20:0-46
+Module not found: Error: Can't resolve './pages/PrintSystem' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./src/pages/Dashboard.tsx 10:0-51
+Module not found: Error: Can't resolve '../hooks/useProducts' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 11:0-51
+Module not found: Error: Can't resolve '../hooks/useInvoices' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 12:0-53
+Module not found: Error: Can't resolve '../hooks/useInventory' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 12 errors and 1 warning
+ERROR in src/App.tsx:12:23
+TS2307: Cannot find module './pages/Personnel' or its corresponding type declarations.
+    10 | import Invoices from './pages/Invoices';
+    11 | import CRM from './pages/CRM';
+  > 12 | import Personnel from './pages/Personnel';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+
+ERROR in src/App.tsx:13:24
+TS2307: Cannot find module './pages/Accounting' or its corresponding type declarations.
+    11 | import CRM from './pages/CRM';
+    12 | import Personnel from './pages/Personnel';
+  > 13 | import Accounting from './pages/Accounting';
+       |                        ^^^^^^^^^^^^^^^^^^^^
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+
+ERROR in src/App.tsx:14:23
+TS2307: Cannot find module './pages/TaxSystem' or its corresponding type declarations.
+    12 | import Personnel from './pages/Personnel';
+    13 | import Accounting from './pages/Accounting';
+  > 14 | import TaxSystem from './pages/TaxSystem';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+
+ERROR in src/App.tsx:15:21
+TS2307: Cannot find module './pages/Reports' or its corresponding type declarations.
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+  > 15 | import Reports from './pages/Reports';
+       |                     ^^^^^^^^^^^^^^^^^
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+
+ERROR in src/App.tsx:16:25
+TS2307: Cannot find module './pages/PrintSystem' or its corresponding type declarations.
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+  > 16 | import PrintSystem from './pages/PrintSystem';
+       |                         ^^^^^^^^^^^^^^^^^^^^^
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+    19 |
+
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+ERROR in src/pages/Dashboard.tsx:30:29
+TS2307: Cannot find module '../hooks/useProducts' or its corresponding type declarations.
+    28 | import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+    29 | import { useCustomers } from '../hooks/useCustomers';
+  > 30 | import { useProducts } from '../hooks/useProducts';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    31 | import { useInvoices } from '../hooks/useInvoices';
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+
+ERROR in src/pages/Dashboard.tsx:31:29
+TS2307: Cannot find module '../hooks/useInvoices' or its corresponding type declarations.
+    29 | import { useCustomers } from '../hooks/useCustomers';
+    30 | import { useProducts } from '../hooks/useProducts';
+  > 31 | import { useInvoices } from '../hooks/useInvoices';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+    34 | const Dashboard: React.FC = () => {
+
+ERROR in src/pages/Dashboard.tsx:32:30
+TS2307: Cannot find module '../hooks/useInventory' or its corresponding type declarations.
+    30 | import { useProducts } from '../hooks/useProducts';
+    31 | import { useInvoices } from '../hooks/useInvoices';
+  > 32 | import { useInventory } from '../hooks/useInventory';
+       |                              ^^^^^^^^^^^^^^^^^^^^^^^
+    33 |
+    34 | const Dashboard: React.FC = () => {
+    35 |   const [refreshKey, setRefreshKey] = useState(0);
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used     @typescript-eslint/no-unused-vars
+  Line 30:3:  'Business' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 31:3:  'Receipt' is defined but never used         @typescript-eslint/no-unused-vars
+  Line 32:3:  'AccountBalance' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 33:3:  'Gavel' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 34:3:  'BarChart' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 35:3:  'Print' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 36:3:  'MonitorHeart' is defined but never used    @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Dashboard.tsx
+  Line 1:27:    'useEffect' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 12:3:    'Button' is defined but never used               @typescript-eslint/no-unused-vars
+  Line 28:105:  'BarChart' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 28:115:  'Bar' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:10:   'refreshKey' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/SystemStatus.tsx
+  Line 1:27:   'useEffect' is defined but never used                 @typescript-eslint/no-unused-vars
+  Line 11:3:   'Alert' is defined but never used                     @typescript-eslint/no-unused-vars
+  Line 12:3:   'Button' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 32:3:   'Storage' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 33:3:   'Api' is defined but never used                       @typescript-eslint/no-unused-vars
+  Line 34:3:   'Security' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:3:   'Speed' is defined but never used                     @typescript-eslint/no-unused-vars
+  Line 36:3:   'Memory' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 37:3:   'NetworkCheck' is defined but never used              @typescript-eslint/no-unused-vars
+  Line 41:10:  'refreshKey' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 49:24:  'setModuleStatus' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 60:22:  'setRecentLogs' is assigned a value but never used    @typescript-eslint/no-unused-vars
+
+ERROR in ./src/App.tsx 16:0-42
+Module not found: Error: Can't resolve './pages/Personnel' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 17:0-44
+Module not found: Error: Can't resolve './pages/Accounting' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 18:0-42
+Module not found: Error: Can't resolve './pages/TaxSystem' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 19:0-38
+Module not found: Error: Can't resolve './pages/Reports' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 20:0-46
+Module not found: Error: Can't resolve './pages/PrintSystem' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./src/pages/Dashboard.tsx 10:0-51
+Module not found: Error: Can't resolve '../hooks/useProducts' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 11:0-51
+Module not found: Error: Can't resolve '../hooks/useInvoices' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 12:0-53
+Module not found: Error: Can't resolve '../hooks/useInventory' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 12 errors and 1 warning
+ERROR in src/App.tsx:12:23
+TS2307: Cannot find module './pages/Personnel' or its corresponding type declarations.
+    10 | import Invoices from './pages/Invoices';
+    11 | import CRM from './pages/CRM';
+  > 12 | import Personnel from './pages/Personnel';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+
+ERROR in src/App.tsx:13:24
+TS2307: Cannot find module './pages/Accounting' or its corresponding type declarations.
+    11 | import CRM from './pages/CRM';
+    12 | import Personnel from './pages/Personnel';
+  > 13 | import Accounting from './pages/Accounting';
+       |                        ^^^^^^^^^^^^^^^^^^^^
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+
+ERROR in src/App.tsx:14:23
+TS2307: Cannot find module './pages/TaxSystem' or its corresponding type declarations.
+    12 | import Personnel from './pages/Personnel';
+    13 | import Accounting from './pages/Accounting';
+  > 14 | import TaxSystem from './pages/TaxSystem';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+
+ERROR in src/App.tsx:15:21
+TS2307: Cannot find module './pages/Reports' or its corresponding type declarations.
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+  > 15 | import Reports from './pages/Reports';
+       |                     ^^^^^^^^^^^^^^^^^
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+
+ERROR in src/App.tsx:16:25
+TS2307: Cannot find module './pages/PrintSystem' or its corresponding type declarations.
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+  > 16 | import PrintSystem from './pages/PrintSystem';
+       |                         ^^^^^^^^^^^^^^^^^^^^^
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+    19 |
+
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+ERROR in src/pages/Dashboard.tsx:30:29
+TS2307: Cannot find module '../hooks/useProducts' or its corresponding type declarations.
+    28 | import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+    29 | import { useCustomers } from '../hooks/useCustomers';
+  > 30 | import { useProducts } from '../hooks/useProducts';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    31 | import { useInvoices } from '../hooks/useInvoices';
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+
+ERROR in src/pages/Dashboard.tsx:31:29
+TS2307: Cannot find module '../hooks/useInvoices' or its corresponding type declarations.
+    29 | import { useCustomers } from '../hooks/useCustomers';
+    30 | import { useProducts } from '../hooks/useProducts';
+  > 31 | import { useInvoices } from '../hooks/useInvoices';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+    34 | const Dashboard: React.FC = () => {
+
+ERROR in src/pages/Dashboard.tsx:32:30
+TS2307: Cannot find module '../hooks/useInventory' or its corresponding type declarations.
+    30 | import { useProducts } from '../hooks/useProducts';
+    31 | import { useInvoices } from '../hooks/useInvoices';
+  > 32 | import { useInventory } from '../hooks/useInventory';
+       |                              ^^^^^^^^^^^^^^^^^^^^^^^
+    33 |
+    34 | const Dashboard: React.FC = () => {
+    35 |   const [refreshKey, setRefreshKey] = useState(0);
+
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/hooks/useAuth.ts
+Syntax error: '>' expected (79:31)
+WARNING in [eslint] 
+src/components/CustomerForm.tsx
+  Line 14:3:   'Box' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 17:10:  'DatePicker' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 18:10:  'LocalizationProvider' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 19:10:  'AdapterDateFns' is defined but never used        @typescript-eslint/no-unused-vars
+  Line 20:10:  'faIR' is defined but never used                  @typescript-eslint/no-unused-vars
+
+src/components/Layout.tsx
+  Line 29:3:  'ChevronLeft' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 31:3:  'Receipt' is defined but never used      @typescript-eslint/no-unused-vars
+
+src/pages/Customers.tsx
+  Line 31:44:  'categoriesLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/Dashboard.tsx
+  Line 1:27:    'useEffect' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 12:3:    'Button' is defined but never used               @typescript-eslint/no-unused-vars
+  Line 28:105:  'BarChart' is defined but never used             @typescript-eslint/no-unused-vars
+  Line 28:115:  'Bar' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:10:   'refreshKey' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+src/pages/SystemStatus.tsx
+  Line 1:27:   'useEffect' is defined but never used                 @typescript-eslint/no-unused-vars
+  Line 11:3:   'Alert' is defined but never used                     @typescript-eslint/no-unused-vars
+  Line 12:3:   'Button' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 32:3:   'Storage' is defined but never used                   @typescript-eslint/no-unused-vars
+  Line 33:3:   'Api' is defined but never used                       @typescript-eslint/no-unused-vars
+  Line 34:3:   'Security' is defined but never used                  @typescript-eslint/no-unused-vars
+  Line 35:3:   'Speed' is defined but never used                     @typescript-eslint/no-unused-vars
+  Line 36:3:   'Memory' is defined but never used                    @typescript-eslint/no-unused-vars
+  Line 37:3:   'NetworkCheck' is defined but never used              @typescript-eslint/no-unused-vars
+  Line 41:10:  'refreshKey' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  Line 49:24:  'setModuleStatus' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 60:22:  'setRecentLogs' is assigned a value but never used    @typescript-eslint/no-unused-vars
+
+ERROR in ./src/App.tsx 16:0-42
+Module not found: Error: Can't resolve './pages/Personnel' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 17:0-44
+Module not found: Error: Can't resolve './pages/Accounting' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 18:0-42
+Module not found: Error: Can't resolve './pages/TaxSystem' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 19:0-38
+Module not found: Error: Can't resolve './pages/Reports' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/App.tsx 20:0-46
+Module not found: Error: Can't resolve './pages/PrintSystem' in '/workspace/crm-erp-system/frontend/src'
+
+ERROR in ./src/hooks/useAuth.ts
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /workspace/crm-erp-system/frontend/src/hooks/useAuth.ts: Unexpected token, expected "," (79:21)
+
+  77 |   };
+  78 |
+> 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+     |                      ^
+  80 | };
+    at constructor (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6630:19)
+    at TypeScriptParserMixin.unexpected (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6650:16)
+    at TypeScriptParserMixin.expect (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6930:12)
+    at TypeScriptParserMixin.tsParseDelimitedListWorker (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7932:14)
+    at TypeScriptParserMixin.tsParseDelimitedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7909:25)
+    at TypeScriptParserMixin.tsParseBracketedList (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:7949:25)
+    at TypeScriptParserMixin.tsParseTypeParameters (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:8107:24)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9812:29
+    at TypeScriptParserMixin.tryParse (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:6938:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9810:24)
+    at TypeScriptParserMixin.parseExpressionBase (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10788:23)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10784:17)
+    at TypeScriptParserMixin.parseReturnStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13151:28)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12807:21)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13325:61)
+    at TypeScriptParserMixin.parseBlockBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13318:10)
+    at TypeScriptParserMixin.parseBlock (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13306:10)
+    at TypeScriptParserMixin.parseFunctionBody (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12110:24)
+    at TypeScriptParserMixin.parseArrowExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12085:10)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11695:12)
+    at TypeScriptParserMixin.parseExprAtom (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11335:23)
+    at TypeScriptParserMixin.parseExprSubscripts (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11085:23)
+    at TypeScriptParserMixin.parseUpdate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11070:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:11050:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9857:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10903:61)
+    at TypeScriptParserMixin.parseExprOps (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10908:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10885:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10835:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9806:20)
+    at /workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:39
+    at TypeScriptParserMixin.allowInAnd (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12431:16)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:10804:17)
+    at TypeScriptParserMixin.parseVar (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13393:91)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13239:10)
+    at TypeScriptParserMixin.parseVarStatement (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9498:31)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12860:23)
+    at TypeScriptParserMixin.parseStatementContent (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9532:18)
+    at TypeScriptParserMixin.parseStatementLike (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12776:17)
+    at TypeScriptParserMixin.parseStatementListItem (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:12756:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13943:17)
+    at TypeScriptParserMixin.parseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:9657:85)
+    at TypeScriptParserMixin.maybeParseExportDeclaration (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13902:31)
+    at TypeScriptParserMixin.parseExport (/workspace/crm-erp-system/frontend/node_modules/@babel/parser/lib/index.js:13821:29)
+
+ERROR in ./src/hooks/useCustomers.ts 15:0-39
+Module not found: Error: Can't resolve 'react-toastify' in '/workspace/crm-erp-system/frontend/src/hooks'
+
+ERROR in ./src/pages/Dashboard.tsx 10:0-51
+Module not found: Error: Can't resolve '../hooks/useProducts' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 11:0-51
+Module not found: Error: Can't resolve '../hooks/useInvoices' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./src/pages/Dashboard.tsx 12:0-53
+Module not found: Error: Can't resolve '../hooks/useInventory' in '/workspace/crm-erp-system/frontend/src/pages'
+
+ERROR in ./node_modules/@mui/x-date-pickers/AdapterDateFns/AdapterDateFns.js 58:0-65
+Module not found: Error: Package path ./_lib/format/longFormatters is not exported from package /workspace/crm-erp-system/frontend/node_modules/date-fns (see exports field in /workspace/crm-erp-system/frontend/node_modules/date-fns/package.json)
+
+ERROR in [eslint] 
+src/hooks/useAuth.ts
+  Line 79:31:  Parsing error: '>' expected
+
+webpack compiled with 12 errors and 1 warning
+ERROR in src/App.tsx:12:23
+TS2307: Cannot find module './pages/Personnel' or its corresponding type declarations.
+    10 | import Invoices from './pages/Invoices';
+    11 | import CRM from './pages/CRM';
+  > 12 | import Personnel from './pages/Personnel';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+
+ERROR in src/App.tsx:13:24
+TS2307: Cannot find module './pages/Accounting' or its corresponding type declarations.
+    11 | import CRM from './pages/CRM';
+    12 | import Personnel from './pages/Personnel';
+  > 13 | import Accounting from './pages/Accounting';
+       |                        ^^^^^^^^^^^^^^^^^^^^
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+
+ERROR in src/App.tsx:14:23
+TS2307: Cannot find module './pages/TaxSystem' or its corresponding type declarations.
+    12 | import Personnel from './pages/Personnel';
+    13 | import Accounting from './pages/Accounting';
+  > 14 | import TaxSystem from './pages/TaxSystem';
+       |                       ^^^^^^^^^^^^^^^^^^^
+    15 | import Reports from './pages/Reports';
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+
+ERROR in src/App.tsx:15:21
+TS2307: Cannot find module './pages/Reports' or its corresponding type declarations.
+    13 | import Accounting from './pages/Accounting';
+    14 | import TaxSystem from './pages/TaxSystem';
+  > 15 | import Reports from './pages/Reports';
+       |                     ^^^^^^^^^^^^^^^^^
+    16 | import PrintSystem from './pages/PrintSystem';
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+
+ERROR in src/App.tsx:16:25
+TS2307: Cannot find module './pages/PrintSystem' or its corresponding type declarations.
+    14 | import TaxSystem from './pages/TaxSystem';
+    15 | import Reports from './pages/Reports';
+  > 16 | import PrintSystem from './pages/PrintSystem';
+       |                         ^^^^^^^^^^^^^^^^^^^^^
+    17 | import SystemStatus from './pages/SystemStatus';
+    18 | import { useAuth } from './hooks/useAuth';
+    19 |
+
+ERROR in src/components/CustomerForm.tsx:110:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+    108 |                     label="کد مشتری"
+    109 |                     error={!!errors.customer_code}
+  > 110 |                     helperText={errors.customer_code?.message}
+        |                     ^^^^^^^^^^
+    111 |                   />
+    112 |                 )}
+    113 |               />
+
+ERROR in src/components/CustomerForm.tsx:141:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    139 |                     label="نام"
+    140 |                     error={!!errors.first_name}
+  > 141 |                     helperText={errors.first_name?.message}
+        |                     ^^^^^^^^^^
+    142 |                   />
+    143 |                 )}
+    144 |               />
+
+ERROR in src/components/CustomerForm.tsx:157:21
+TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined' is not assignable to type 'ReactNode'.
+    155 |                     label="نام خانوادگی"
+    156 |                     error={!!errors.last_name}
+  > 157 |                     helperText={errors.last_name?.message}
+        |                     ^^^^^^^^^^
+    158 |                   />
+    159 |                 )}
+    160 |               />
+
+ERROR in src/hooks/useAuth.ts
+TS1161: Unterminated regular expression literal.
+
+ERROR in src/hooks/useAuth.ts:79:11
+TS2503: Cannot find namespace 'AuthContext'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |           ^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:32
+TS1005: '>' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                ^^^^^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:37
+TS1005: ';' expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                     ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS1109: Expression expected.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^
+    80 | };
+
+ERROR in src/hooks/useAuth.ts:79:45
+TS2365: Operator '<' cannot be applied to types 'boolean' and 'RegExp'.
+    77 |   };
+    78 |
+  > 79 |   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+       |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    80 | };
+
+ERROR in src/hooks/useCustomers.ts:3:23
+TS2307: Cannot find module 'react-toastify' or its corresponding type declarations.
+    1 | import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+    2 | import { customerService } from '../services/customerService';
+  > 3 | import { toast } from 'react-toastify';
+      |                       ^^^^^^^^^^^^^^^^
+    4 |
+    5 | export const useCustomers = (params?: any) => {
+    6 |   return useQuery({
+
+ERROR in src/index.tsx:40:60
+TS2741: Property 'enUS' is missing in type 'Locale' but required in type 'typeof import("/workspace/crm-erp-system/frontend/node_modules/date-fns/locale/en-US")'.
+    38 |       <ThemeProvider theme={theme}>
+    39 |         <CssBaseline />
+  > 40 |         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+       |                                                            ^^^^^^^^^^^^^
+    41 |           <BrowserRouter>
+    42 |             <App />
+    43 |           </BrowserRouter>
+
+ERROR in src/pages/Dashboard.tsx:30:29
+TS2307: Cannot find module '../hooks/useProducts' or its corresponding type declarations.
+    28 | import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+    29 | import { useCustomers } from '../hooks/useCustomers';
+  > 30 | import { useProducts } from '../hooks/useProducts';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    31 | import { useInvoices } from '../hooks/useInvoices';
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+
+ERROR in src/pages/Dashboard.tsx:31:29
+TS2307: Cannot find module '../hooks/useInvoices' or its corresponding type declarations.
+    29 | import { useCustomers } from '../hooks/useCustomers';
+    30 | import { useProducts } from '../hooks/useProducts';
+  > 31 | import { useInvoices } from '../hooks/useInvoices';
+       |                             ^^^^^^^^^^^^^^^^^^^^^^
+    32 | import { useInventory } from '../hooks/useInventory';
+    33 |
+    34 | const Dashboard: React.FC = () => {
+
+ERROR in src/pages/Dashboard.tsx:32:30
+TS2307: Cannot find module '../hooks/useInventory' or its corresponding type declarations.
+    30 | import { useProducts } from '../hooks/useProducts';
+    31 | import { useInvoices } from '../hooks/useInvoices';
+  > 32 | import { useInventory } from '../hooks/useInventory';
+       |                              ^^^^^^^^^^^^^^^^^^^^^^^
+    33 |
+    34 | const Dashboard: React.FC = () => {
+    35 |   const [refreshKey, setRefreshKey] = useState(0);
+
