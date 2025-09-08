@@ -1,3 +1,7 @@
 Watching for file changes with StatReloader
 Not Found: /api/v1/
-[08/Sep/2025 12:31:56] "GET /api/v1/ HTTP/1.1" 404 4116
+[08/Sep/2025 13:35:52] "GET /api/v1/ HTTP/1.1" 404 4116
+Not Found: /api/v1/
+[08/Sep/2025 13:36:06] "GET /api/v1/ HTTP/1.1" 404 4116
+[08/Sep/2025 13:36:09] "GET /admin/ HTTP/1.1" 302 0
+[08/Sep/2025 13:36:20] "GET /admin/ HTTP/1.1" 302 0
