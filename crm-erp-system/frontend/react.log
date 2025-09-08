@@ -2,4 +2,10 @@
 > crm-erp-frontend@1.0.0 start
 > react-scripts start
 
-Something is already running on port 3000.
+We detected TypeScript in your project (src/App.tsx) and created a tsconfig.json file for you.
+
+Your tsconfig.json has been populated with default values.
+
+Could not find a required file.
+  Name: index.html
+  Searched in: /workspace/crm-erp-system/frontend/public
