@@ -107,7 +107,7 @@ const CustomerForm: React.FC<CustomerFormProps> = ({
                     fullWidth
                     label="کد مشتری"
                     error={!!errors.customer_code}
-                    helperText={errors.customer_code?.message}
+                    helperText={errors.customer_code?.message as string}
                   />
                 )}
               />
@@ -138,7 +138,7 @@ const CustomerForm: React.FC<CustomerFormProps> = ({
                     fullWidth
                     label="نام"
                     error={!!errors.first_name}
-                    helperText={errors.first_name?.message}
+                    helperText={errors.first_name?.message as string}
                   />
                 )}
               />
@@ -154,7 +154,7 @@ const CustomerForm: React.FC<CustomerFormProps> = ({
                     fullWidth
                     label="نام خانوادگی"
                     error={!!errors.last_name}
-                    helperText={errors.last_name?.message}
+                    helperText={errors.last_name?.message as string}
                   />
                 )}
               />

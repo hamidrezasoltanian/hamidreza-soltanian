@@ -37,7 +37,7 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
+        <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR as any}>
           <BrowserRouter>
             <App />
           </BrowserRouter>

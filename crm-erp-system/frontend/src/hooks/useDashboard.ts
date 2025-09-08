@@ -11,6 +11,20 @@ export interface Widget {
   data?: any;
 }
 
+export interface FilterOptions {
+  dateRange: {
+    start: Date | null;
+    end: Date | null;
+  };
+  period: 'daily' | 'weekly' | 'monthly' | 'yearly';
+  category: string[];
+  status: string[];
+  amountRange: [number, number];
+  trend: 'all' | 'up' | 'down';
+  groupBy: 'none' | 'category' | 'status' | 'date';
+  showZeroValues: boolean;
+}
+
 export interface DashboardConfig {
   widgets: Widget[];
   layout: 'grid' | 'list';

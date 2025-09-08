@@ -32,7 +32,7 @@ import {
   Add,
   Edit,
   Delete,
-  TestTube,
+  Science,
   Save,
   Refresh,
 } from '@mui/icons-material';
@@ -117,7 +117,7 @@ const NotificationsPage: React.FC = () => {
         <Box display="flex" gap={1}>
           <Button
             variant="outlined"
-            startIcon={<TestTube />}
+            startIcon={<Science />}
             onClick={() => setShowTestDialog(true)}
           >
             تست اعلان

@@ -64,6 +64,10 @@ interface ExportImportProps {
   onClose?: () => void;
 }
 
+const throwError = (message: string): never => {
+  throw (Error as any)(message);
+};
+
 const ExportImport: React.FC<ExportImportProps> = ({ entity, entityName, onClose }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [exportOptions, setExportOptions] = useState<ExportOptions>({
@@ -113,17 +117,18 @@ const ExportImport: React.FC<ExportImportProps> = ({ entity, entityName, onClose
 
   // Mutations
   const exportMutation = useMutation({
-    mutationFn: (options: ExportOptions) => {
+    mutationFn: async (options: ExportOptions) => {
       switch (entity) {
-        case 'customers': return exportService.exportCustomers(options);
-        case 'products': return exportService.exportProducts(options);
-        case 'invoices': return exportService.exportInvoices(options);
-        case 'inventory': return exportService.exportInventory(options);
-        case 'personnel': return exportService.exportPersonnel(options);
-        case 'accounting': return exportService.exportAccounting(options);
-        case 'tax': return exportService.exportTax(options);
-        case 'reports': return exportService.exportReports(options);
-        default: throw new Error('Unknown entity');
+        case 'customers': return await exportService.exportCustomers(options);
+        case 'products': return await exportService.exportProducts(options);
+        case 'invoices': return await exportService.exportInvoices(options);
+        case 'inventory': return await exportService.exportInventory(options);
+        case 'personnel': return await exportService.exportPersonnel(options);
+        case 'accounting': return await exportService.exportAccounting(options);
+        case 'tax': return await exportService.exportTax(options);
+        case 'reports': return await exportService.exportReports(options);
+        default: 
+          throwError('Unknown entity');
       }
     },
     onSuccess: (job) => {
@@ -148,13 +153,14 @@ const ExportImport: React.FC<ExportImportProps> = ({ entity, entityName, onClose
   });
 
   const importMutation = useMutation({
-    mutationFn: ({ file, options }: { file: File; options: ImportOptions }) => {
+    mutationFn: async ({ file, options }: { file: File; options: ImportOptions }) => {
       switch (entity) {
-        case 'customers': return exportService.importCustomers(file, options);
-        case 'products': return exportService.importProducts(file, options);
-        case 'invoices': return exportService.importInvoices(file, options);
-        case 'inventory': return exportService.importInventory(file, options);
-        default: throw new Error('Import not supported for this entity');
+        case 'customers': return await exportService.importCustomers(file, options);
+        case 'products': return await exportService.importProducts(file, options);
+        case 'invoices': return await exportService.importInvoices(file, options);
+        case 'inventory': return await exportService.importInventory(file, options);
+        default: 
+          throwError('Import not supported for this entity');
       }
     },
     onSuccess: (job) => {

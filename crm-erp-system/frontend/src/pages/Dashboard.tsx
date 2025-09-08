@@ -79,7 +79,7 @@ const Dashboard: React.FC = () => {
     period: 'monthly',
     category: [],
     status: [],
-    amountRange: [0, 10000000],
+    amountRange: [0, 10000000] as [number, number],
     trend: 'all',
     showZeroValues: true,
     groupBy: 'none',
