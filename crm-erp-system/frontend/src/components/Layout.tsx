@@ -37,6 +37,7 @@ import {
   DarkMode,
   LightMode,
   NotificationsActive,
+  ImportExport,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
@@ -58,6 +59,7 @@ const menuItems = [
   { text: 'گزارش‌گیری', icon: <BarChart />, path: '/reports' },
   { text: 'پرینت', icon: <Print />, path: '/print' },
   { text: 'اعلان‌ها', icon: <NotificationsActive />, path: '/notifications' },
+  { text: 'صادرات/واردات', icon: <ImportExport />, path: '/export-import' },
   { text: 'وضعیت سیستم', icon: <MonitorHeart />, path: '/status' },
 ];
 

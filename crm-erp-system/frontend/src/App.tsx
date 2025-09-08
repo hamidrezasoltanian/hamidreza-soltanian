@@ -18,6 +18,7 @@ import Reports from './pages/Reports';
 import PrintSystem from './pages/PrintSystem';
 import SystemStatus from './pages/SystemStatus';
 import Notifications from './pages/Notifications';
+import ExportImport from './pages/ExportImport';
 import { useAuth } from './hooks/useAuth';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
               <Route path="/print" element={<PrintSystem />} />
               <Route path="/status" element={<SystemStatus />} />
               <Route path="/notifications" element={<Notifications />} />
+            <Route path="/export-import" element={<ExportImport />} />
             </Routes>
           </Layout>
         </Box>
