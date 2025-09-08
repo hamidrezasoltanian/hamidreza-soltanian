@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { faIR } from 'date-fns/locale';
+import { AuthProvider } from './hooks/useAuth';
 import App from './App';
 
 // Create a client
@@ -39,7 +40,9 @@ root.render(
         <CssBaseline />
         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR as any}>
           <BrowserRouter>
-            <App />
+            <AuthProvider>
+              <App />
+            </AuthProvider>
           </BrowserRouter>
         </LocalizationProvider>
       </ThemeProvider>

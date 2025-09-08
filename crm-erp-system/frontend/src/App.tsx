@@ -54,7 +54,7 @@ function App() {
               <Route path="/print" element={<PrintSystem />} />
               <Route path="/status" element={<SystemStatus />} />
               <Route path="/notifications" element={<Notifications />} />
-            <Route path="/export-import" element={<ExportImport />} />
+              <Route path="/export-import" element={<ExportImport />} />
             </Routes>
           </Layout>
         </Box>
