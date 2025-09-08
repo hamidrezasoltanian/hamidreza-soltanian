@@ -5,3 +5,29 @@ Not Found: /api/v1/
 [08/Sep/2025 13:36:06] "GET /api/v1/ HTTP/1.1" 404 4116
 [08/Sep/2025 13:36:09] "GET /admin/ HTTP/1.1" 302 0
 [08/Sep/2025 13:36:20] "GET /admin/ HTTP/1.1" 302 0
+[08/Sep/2025 17:09:33] "GET /admin/ HTTP/1.1" 302 0
+[08/Sep/2025 17:09:36] "HEAD /admin/ HTTP/1.1" 302 0
+Method Not Allowed: /api/v1/auth/login/
+[08/Sep/2025 17:09:39] "HEAD /api/v1/auth/login/ HTTP/1.1" 405 0
+/workspace/crm-erp-system/backend/crm_erp/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 08, 2025 - 13:35:48
+Django version 5.2.6, using settings 'crm_erp.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 08, 2025 - 17:09:56
+Django version 5.2.6, using settings 'crm_erp.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
