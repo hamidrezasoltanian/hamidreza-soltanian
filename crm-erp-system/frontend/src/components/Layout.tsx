@@ -36,10 +36,12 @@ import {
   MonitorHeart,
   DarkMode,
   LightMode,
+  NotificationsActive,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useTheme } from '../contexts/ThemeContext';
+import NotificationBell from './NotificationBell';
 
 const drawerWidth = 240;
 
@@ -55,6 +57,7 @@ const menuItems = [
   { text: 'مالیات', icon: <Gavel />, path: '/tax' },
   { text: 'گزارش‌گیری', icon: <BarChart />, path: '/reports' },
   { text: 'پرینت', icon: <Print />, path: '/print' },
+  { text: 'اعلان‌ها', icon: <NotificationsActive />, path: '/notifications' },
   { text: 'وضعیت سیستم', icon: <MonitorHeart />, path: '/status' },
 ];
 
@@ -139,6 +142,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               {isDarkMode ? <LightMode /> : <DarkMode />}
             </IconButton>
           </Tooltip>
+          <NotificationBell />
           <IconButton
             size="large"
             aria-label="account of current user"
