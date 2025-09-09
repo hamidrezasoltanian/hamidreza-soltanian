@@ -2,7 +2,8 @@ from rest_framework import viewsets, filters, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from django.db.models import Q
+from django.db.models import Q, Prefetch, Count, Sum
+from django.core.cache import cache
 from .models import Customer, CustomerCategory, CustomerCategoryMembership
 from .serializers import CustomerSerializer, CustomerCategorySerializer, CustomerCategoryMembershipSerializer
 
@@ -17,7 +18,10 @@ class CustomerViewSet(viewsets.ModelViewSet):
     ordering = ['-created_at']
     
     def get_queryset(self):
-        queryset = super().get_queryset()
+        # Optimized queryset with select_related and prefetch_related
+        queryset = Customer.objects.select_related('created_by').prefetch_related(
+            Prefetch('category_memberships', queryset=CustomerCategoryMembership.objects.select_related('category'))
+        )
         
         # فیلتر بر اساس تگ‌ها
         tags = self.request.query_params.get('tags')
@@ -30,18 +34,25 @@ class CustomerViewSet(viewsets.ModelViewSet):
     
     @action(detail=False, methods=['get'])
     def stats(self, request):
-        """آمار کلی مشتریان"""
-        total_customers = self.get_queryset().count()
-        active_customers = self.get_queryset().filter(status='active').count()
-        individual_customers = self.get_queryset().filter(customer_type='individual').count()
-        legal_customers = self.get_queryset().filter(customer_type='legal').count()
+        """آمار کلی مشتریان با کش"""
+        cache_key = f"customer_stats_{request.user.id}"
+        cached_stats = cache.get(cache_key)
         
-        return Response({
-            'total_customers': total_customers,
-            'active_customers': active_customers,
-            'individual_customers': individual_customers,
-            'legal_customers': legal_customers,
-        })
+        if cached_stats:
+            return Response(cached_stats)
+        
+        # Optimized single query for all stats
+        stats = self.get_queryset().aggregate(
+            total_customers=Count('id'),
+            active_customers=Count('id', filter=Q(status='active')),
+            individual_customers=Count('id', filter=Q(customer_type='individual')),
+            legal_customers=Count('id', filter=Q(customer_type='legal'))
+        )
+        
+        # Cache for 5 minutes
+        cache.set(cache_key, stats, 300)
+        
+        return Response(stats)
     
     @action(detail=True, methods=['post'])
     def add_tags(self, request, pk=None):

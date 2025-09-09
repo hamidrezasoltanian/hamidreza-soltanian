@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import { CustomThemeProvider } from './contexts/ThemeContext';
 import { NotificationProvider } from './contexts/NotificationContext';
 import Layout from './components/Layout';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Customers from './pages/Customers';
-import Products from './pages/Products';
-import Inventory from './pages/Inventory';
-import Invoices from './pages/Invoices';
-import CRM from './pages/CRM';
-import Personnel from './pages/Personnel';
-import Accounting from './pages/Accounting';
-import TaxSystem from './pages/TaxSystem';
-import Reports from './pages/Reports';
-import PrintSystem from './pages/PrintSystem';
-import SystemStatus from './pages/SystemStatus';
-import Notifications from './pages/Notifications';
-import ExportImport from './pages/ExportImport';
 import { useAuth } from './hooks/useAuth';
+
+// Lazy load pages for better performance
+const Login = lazy(() => import('./pages/Login'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Customers = lazy(() => import('./pages/Customers'));
+const Products = lazy(() => import('./pages/Products'));
+const Inventory = lazy(() => import('./pages/Inventory'));
+const Invoices = lazy(() => import('./pages/Invoices'));
+const CRM = lazy(() => import('./pages/CRM'));
+const Personnel = lazy(() => import('./pages/Personnel'));
+const Accounting = lazy(() => import('./pages/Accounting'));
+const TaxSystem = lazy(() => import('./pages/TaxSystem'));
+const Reports = lazy(() => import('./pages/Reports'));
+const PrintSystem = lazy(() => import('./pages/PrintSystem'));
+const SystemStatus = lazy(() => import('./pages/SystemStatus'));
+const Notifications = lazy(() => import('./pages/Notifications'));
+const ExportImport = lazy(() => import('./pages/ExportImport'));
+
+// Loading component
+const PageLoader = () => (
+  <Box 
+    display="flex" 
+    justifyContent="center" 
+    alignItems="center" 
+    minHeight="400px"
+  >
+    <CircularProgress />
+  </Box>
+);
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -28,7 +42,9 @@ function App() {
     return (
       <CustomThemeProvider>
         <NotificationProvider>
-          <Login />
+          <Suspense fallback={<PageLoader />}>
+            <Login />
+          </Suspense>
         </NotificationProvider>
       </CustomThemeProvider>
     );
@@ -39,23 +55,25 @@ function App() {
       <NotificationProvider>
         <Box sx={{ display: 'flex' }}>
           <Layout>
-            <Routes>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/customers" element={<Customers />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/inventory" element={<Inventory />} />
-              <Route path="/invoices" element={<Invoices />} />
-              <Route path="/crm" element={<CRM />} />
-              <Route path="/personnel" element={<Personnel />} />
-              <Route path="/accounting" element={<Accounting />} />
-              <Route path="/tax" element={<TaxSystem />} />
-              <Route path="/reports" element={<Reports />} />
-              <Route path="/print" element={<PrintSystem />} />
-              <Route path="/status" element={<SystemStatus />} />
-              <Route path="/notifications" element={<Notifications />} />
-              <Route path="/export-import" element={<ExportImport />} />
-            </Routes>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/customers" element={<Customers />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/inventory" element={<Inventory />} />
+                <Route path="/invoices" element={<Invoices />} />
+                <Route path="/crm" element={<CRM />} />
+                <Route path="/personnel" element={<Personnel />} />
+                <Route path="/accounting" element={<Accounting />} />
+                <Route path="/tax" element={<TaxSystem />} />
+                <Route path="/reports" element={<Reports />} />
+                <Route path="/print" element={<PrintSystem />} />
+                <Route path="/status" element={<SystemStatus />} />
+                <Route path="/notifications" element={<Notifications />} />
+                <Route path="/export-import" element={<ExportImport />} />
+              </Routes>
+            </Suspense>
           </Layout>
         </Box>
       </NotificationProvider>
