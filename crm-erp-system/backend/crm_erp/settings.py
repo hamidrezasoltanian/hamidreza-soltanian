@@ -244,16 +244,16 @@ LOGGING = {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
             'style': '{',
         },
-        'json': {
-            '()': 'structlog.stdlib.ProcessorFormatter',
-            'processor': 'structlog.dev.ConsoleRenderer(colors=False)',
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
         },
     },
     'handlers': {
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'formatter': 'json',
+            'formatter': 'simple',
         },
         'file': {
             'level': 'INFO',
@@ -261,7 +261,7 @@ LOGGING = {
             'filename': BASE_DIR / 'logs' / 'django.log',
             'maxBytes': 1024*1024*15,  # 15MB
             'backupCount': 10,
-            'formatter': 'json',
+            'formatter': 'simple',
         },
         'security_file': {
             'level': 'INFO',
@@ -269,7 +269,7 @@ LOGGING = {
             'filename': BASE_DIR / 'logs' / 'security.log',
             'maxBytes': 1024*1024*15,  # 15MB
             'backupCount': 10,
-            'formatter': 'json',
+            'formatter': 'simple',
         },
     },
     'loggers': {
