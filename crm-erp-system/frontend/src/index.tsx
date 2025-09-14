@@ -1,31 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { faIR } from 'date-fns/locale';
+import './index.css';
 import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-// Create a client
-const queryClient = new QueryClient();
+// RTL support
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
+import { prefixer } from 'stylis';
+import rtlPlugin from 'stylis-plugin-rtl';
 
-// Create theme
-const theme = createTheme({
-  direction: 'rtl',
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-  typography: {
-    fontFamily: 'Roboto, Arial, sans-serif',
-  },
+// Create rtl cache
+const cacheRtl = createCache({
+  key: 'muirtl',
+  stylisPlugins: [prefixer, rtlPlugin],
 });
 
 const root = ReactDOM.createRoot(
@@ -34,15 +22,13 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={faIR}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </LocalizationProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
+    <CacheProvider value={cacheRtl}>
+      <App />
+    </CacheProvider>
   </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
