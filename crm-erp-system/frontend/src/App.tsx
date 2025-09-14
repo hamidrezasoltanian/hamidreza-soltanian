@@ -1,65 +1,152 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { Box } from '@mui/material';
-import { CustomThemeProvider } from './contexts/ThemeContext';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { NotificationProvider } from './contexts/NotificationContext';
-import Layout from './components/Layout';
-import Login from './pages/Login';
+import { ThemeProvider as CustomThemeProvider } from './contexts/ThemeContext';
+
+// Pages
+import Login from './pages/auth/Login';
 import Dashboard from './pages/Dashboard';
-import Customers from './pages/Customers';
-import Products from './pages/Products';
-import Inventory from './pages/Inventory';
-import Invoices from './pages/Invoices';
-import CRM from './pages/CRM';
-import Personnel from './pages/Personnel';
-import Accounting from './pages/Accounting';
-import TaxSystem from './pages/TaxSystem';
-import Reports from './pages/Reports';
-import PrintSystem from './pages/PrintSystem';
-import SystemStatus from './pages/SystemStatus';
-import Notifications from './pages/Notifications';
-import ExportImport from './pages/ExportImport';
-import { useAuth } from './hooks/useAuth';
+import CustomerList from './pages/customers/CustomerList';
+import ProductList from './pages/products/ProductList';
+import InvoiceList from './pages/invoices/InvoiceList';
+import MainLayout from './components/layout/MainLayout';
 
-function App() {
-  const { isAuthenticated } = useAuth();
+// Create a client
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
-  if (!isAuthenticated) {
-    return (
-      <CustomThemeProvider>
-        <NotificationProvider>
-          <Login />
-        </NotificationProvider>
-      </CustomThemeProvider>
-    );
+// Create theme
+const theme = createTheme({
+  direction: 'rtl',
+  typography: {
+    fontFamily: [
+      'IRANSans',
+      'Vazir',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+  palette: {
+    primary: {
+      main: '#1976d2',
+      light: '#42a5f5',
+      dark: '#1565c0',
+    },
+    secondary: {
+      main: '#dc004e',
+      light: '#f50057',
+      dark: '#c51162',
+    },
+    background: {
+      default: '#f5f5f5',
+      paper: '#ffffff',
+    },
+  },
+  shape: {
+    borderRadius: 8,
+  },
+});
+
+// Protected Route Component
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return <>{children}</>;
+};
+
+function App() {
   return (
-    <CustomThemeProvider>
-      <NotificationProvider>
-        <Box sx={{ display: 'flex' }}>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/customers" element={<Customers />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/inventory" element={<Inventory />} />
-              <Route path="/invoices" element={<Invoices />} />
-              <Route path="/crm" element={<CRM />} />
-              <Route path="/personnel" element={<Personnel />} />
-              <Route path="/accounting" element={<Accounting />} />
-              <Route path="/tax" element={<TaxSystem />} />
-              <Route path="/reports" element={<Reports />} />
-              <Route path="/print" element={<PrintSystem />} />
-              <Route path="/status" element={<SystemStatus />} />
-              <Route path="/notifications" element={<Notifications />} />
-            <Route path="/export-import" element={<ExportImport />} />
-            </Routes>
-          </Layout>
-        </Box>
-      </NotificationProvider>
-    </CustomThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AuthProvider>
+          <NotificationProvider>
+            <CustomThemeProvider>
+              <Router>
+                <Routes>
+                  {/* Public Routes */}
+                  <Route path="/login" element={<Login />} />
+
+                  {/* Protected Routes */}
+                  <Route
+                    path="/"
+                    element={
+                      <ProtectedRoute>
+                        <MainLayout />
+                      </ProtectedRoute>
+                    }
+                  >
+                    <Route index element={<Navigate to="/dashboard" replace />} />
+                    <Route path="dashboard" element={<Dashboard />} />
+                    
+                    {/* Customer Routes */}
+                    <Route path="customers" element={<CustomerList />} />
+                    <Route path="customers/new" element={<div>New Customer Form</div>} />
+                    <Route path="customers/:id" element={<div>Customer Detail</div>} />
+                    <Route path="customers/:id/edit" element={<div>Edit Customer</div>} />
+                    
+                    {/* Product Routes */}
+                    <Route path="products" element={<ProductList />} />
+                    <Route path="products/new" element={<div>New Product</div>} />
+                    <Route path="products/:id" element={<div>Product Detail</div>} />
+                    
+                    {/* Inventory Routes */}
+                    <Route path="inventory" element={<div>Inventory</div>} />
+                    
+                    {/* Invoice Routes */}
+                    <Route path="invoices" element={<InvoiceList />} />
+                    <Route path="invoices/new" element={<div>New Invoice</div>} />
+                    <Route path="invoices/:id" element={<div>Invoice Detail</div>} />
+                    
+                    {/* CRM Routes */}
+                    <Route path="crm/leads" element={<div>Leads</div>} />
+                    <Route path="crm/opportunities" element={<div>Opportunities</div>} />
+                    <Route path="crm/activities" element={<div>Activities</div>} />
+                    
+                    {/* Accounting Routes */}
+                    <Route path="accounting/ledger" element={<div>General Ledger</div>} />
+                    <Route path="accounting/trial-balance" element={<div>Trial Balance</div>} />
+                    <Route path="accounting/entries" element={<div>Journal Entries</div>} />
+                    
+                    {/* Reports */}
+                    <Route path="reports" element={<div>Reports</div>} />
+                    
+                    {/* Settings */}
+                    <Route path="settings" element={<div>Settings</div>} />
+                    <Route path="profile" element={<div>Profile</div>} />
+                  </Route>
+
+                  {/* Catch all */}
+                  <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                </Routes>
+              </Router>
+            </CustomThemeProvider>
+          </NotificationProvider>
+        </AuthProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 
