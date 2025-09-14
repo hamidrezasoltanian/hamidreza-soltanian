@@ -10,6 +10,8 @@ import { ThemeProvider as CustomThemeProvider } from './contexts/ThemeContext';
 import Login from './pages/auth/Login';
 import Dashboard from './pages/Dashboard';
 import CustomerList from './pages/customers/CustomerList';
+import ProductList from './pages/products/ProductList';
+import InvoiceList from './pages/invoices/InvoiceList';
 import MainLayout from './components/layout/MainLayout';
 
 // Create a client
@@ -106,7 +108,7 @@ function App() {
                     <Route path="customers/:id/edit" element={<div>Edit Customer</div>} />
                     
                     {/* Product Routes */}
-                    <Route path="products" element={<div>Product List</div>} />
+                    <Route path="products" element={<ProductList />} />
                     <Route path="products/new" element={<div>New Product</div>} />
                     <Route path="products/:id" element={<div>Product Detail</div>} />
                     
@@ -114,7 +116,7 @@ function App() {
                     <Route path="inventory" element={<div>Inventory</div>} />
                     
                     {/* Invoice Routes */}
-                    <Route path="invoices" element={<div>Invoice List</div>} />
+                    <Route path="invoices" element={<InvoiceList />} />
                     <Route path="invoices/new" element={<div>New Invoice</div>} />
                     <Route path="invoices/:id" element={<div>Invoice Detail</div>} />
                     
