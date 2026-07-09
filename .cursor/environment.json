@@ -1,0 +1,18 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "install": "bash .cursor/scripts/install.sh",
+  "start": "bash .cursor/scripts/start.sh",
+  "terminals": [
+    {
+      "name": "backend",
+      "command": "cd crm-erp-system/backend && source .venv/bin/activate && python manage.py runserver 0.0.0.0:8000"
+    },
+    {
+      "name": "frontend",
+      "command": "cd crm-erp-system/frontend && BROWSER=none PORT=3000 NODE_OPTIONS=--openssl-legacy-provider npm start"
+    }
+  ]
+}
